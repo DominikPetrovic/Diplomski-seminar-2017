@@ -1,0 +1,8 @@
+1) Matlab instalation dir to system variable
+
+2)	//#include "afxres.h"
+	#include "windows.h"
+
+3) fabs() instead of abs() 
+
+4) after 1st build, delete dynarobinmex.pdb to successfully build 2nd time

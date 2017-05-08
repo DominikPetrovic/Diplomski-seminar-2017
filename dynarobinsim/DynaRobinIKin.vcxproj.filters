@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\AlglibCognitus.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\alglibinternal.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\alglibmisc.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\ap.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\dataanalysis.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\diffequations.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\fasttransforms.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\integration.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\interpolation.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\linalg.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\optimization.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\solvers.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\specialfunctions.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\ALGLIB\statistics.cpp">
+      <Filter>ALGLIB\src</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\DynaRobinIKin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynaRobinIKin\DynaRobinMex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\AlglibCognitus.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\AlglibIncludeAll.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\alglibinternal.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\alglibmisc.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\ap.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\CogniException.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\corkit_filters_interface.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\dataanalysis.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\diffequations.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\fasttransforms.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\integration.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\interpolation.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\linalg.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\optimization.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\statistics.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\solvers.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\specialfunctions.h">
+      <Filter>ALGLIB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\DynaRobinIKin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\DynaRobinMex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\ALGLIB\stdafx.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DynaRobinIKin\resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ALGLIB">
+      <UniqueIdentifier>{96956139-abf5-4dde-a59f-38007187a9f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALGLIB\src">
+      <UniqueIdentifier>{3799efd1-0969-4b88-ac19-c37304acdf01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ALGLIB\inc">
+      <UniqueIdentifier>{1bc503e5-776e-4b88-b156-202baf18255a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{bab94166-3d91-44fd-a27d-af34d5b1bd87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b75da21d-e299-4eee-9f1e-9ab861684ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{064daf84-3510-4e1f-a6ac-aeebba5938fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DynaRobinIKin\resources.res">
+      <Filter>Resource</Filter>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DynaRobinIKin\DynaRobinMex.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynaRobinIKin\DynaRobinMex.def">
+      <Filter>Resource</Filter>
+    </None>
+  </ItemGroup>
+</Project>

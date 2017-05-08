@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9C8FC5C2-776F-4337-AD7C-E82BCBB01F1E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DynaRobinMex</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(Configuration)/$(Platform)</OutDir>
+    <IntDir>$(Configuration)/$(Platform)\obj</IntDir>
+    <TargetExt>.mexw32</TargetExt>
+    <TargetName>DynaRobinMex</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetExt>.mexw64</TargetExt>
+    <TargetName>DynaRobinMex</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\$(Platform)\$(Solution Name)\obj</IntDir>
+    <IncludePath>C:\Program Files\MATLAB\R2016a\extern\include;C:\Users\Zvonimir\Desktop\Materijali\2.semestar\Diplomski seminar\dynarobinsim\OpenDynamicsEngine;C:\Users\Zvonimir\Desktop\Materijali\2.semestar\Diplomski seminar\dynarobinsim\ode-0.12;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.mexw32</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.mexw32</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>Kicma;DAMIR;dDOUBLE;WIN32;_DEBUG;_WINDOWS;_USRDLL;MATLAB_MEX_FILE;DYNAROBINMEX_EXPORTS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\OpenDynamicsEngine\include;$(MATLAB)\simulink\include;$(MATLAB)\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(MATLAB)\extern\lib\win32\microsoft;$(SolutionDir)\OpenDynamicsEngine\lib\OpenDynamicsEngine\$(Configuration)\$(Platform);$(SolutionDir)\OpenDynamicsEngine\lib\DrawStuff\$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oded.lib;drawstuffd.lib;libmx.lib;libmex.lib;libmat.lib;user32.lib;Advapi32.lib;winmm.lib;gdi32.lib;opengl32.lib;glu32.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>DynaRobinMEX\DynaRobinMex_x86.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>Kicma;dDOUBLE;WIN32;_DEBUG;_WINDOWS;_USRDLL;MATLAB_MEX_FILE;DYNAROBINMEX_EXPORTS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\OpenDynamicsEngine\include;$(MATLAB)\simulink\include;$(MATLAB)\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files\MATLAB\R2016a\extern\include;C:\Users\Zvonimir\Desktop\Materijali\2.semestar\Diplomski seminar\dynarobinsim\ode-0.12;C:\Users\Zvonimir\Desktop\Materijali\2.semestar\Diplomski seminar\dynarobinsim\OpenDynamicsEngine;$(MATLAB)\extern\lib\win64\microsoft;$(SolutionDir)\OpenDynamicsEngine\lib\OpenDynamicsEngine\$(Configuration)\$(Platform);$(SolutionDir)\OpenDynamicsEngine\lib\DrawStuff\$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>oded.lib;drawstuffd.lib;libmx.lib;libmex.lib;libmat.lib;user32.lib;Advapi32.lib;winmm.lib;gdi32.lib;opengl32.lib;glu32.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>DynaRobinMEX\DynaRobinMex_x64.def</ModuleDefinitionFile>
+      <FullProgramDatabaseFile>true</FullProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;dDOUBLE;NDEBUG;_WINDOWS;_USRDLL;DYNAROBINMEX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\ode-0.11.1\ode\src;..\..\..\..\ode-0.11.1\include;C:\Program Files\MATLAB\R2011a\extern\include;C:\Program Files\MATLAB\R2011a\simulink\include;.;$(ODE)\include;C:\Program Files\boost\boost_1_47;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>DynaRobinMex.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;dDOUBLE;NDEBUG;_WINDOWS;_USRDLL;DYNAROBINMEX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\ode-0.11.1\ode\src;..\..\..\..\ode-0.11.1\include;C:\Program Files\MATLAB\R2011a\extern\include;C:\Program Files\MATLAB\R2011a\simulink\include;.;$(ODE)\include;C:\Program Files\boost\boost_1_47;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>DynaRobinMex.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="DynaRobinMEX\ConfigODE.h" />
+    <ClInclude Include="DynaRobinMEX\DynaRobinODE.h" />
+    <ClInclude Include="DynaRobinMEX\DynRobinBody.h" />
+    <ClInclude Include="DynaRobinMEX\DynRobinSpringLeg.h" />
+    <ClInclude Include="DynaRobinMEX\DynRobinTerrain.h" />
+    <ClInclude Include="DynaRobinMEX\SimplePIDControler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DynaRobinMEX\DynaRobinMex.cpp" />
+    <ClCompile Include="DynaRobinMEX\DynaRobinODE.cpp" />
+    <ClCompile Include="DynaRobinMEX\DynRobinBody.cpp" />
+    <ClCompile Include="DynaRobinMEX\DynRobinSpringLeg.cpp" />
+    <ClCompile Include="DynaRobinMEX\DynRobinTerrain.cpp" />
+    <ClCompile Include="DynaRobinMEX\SimplePIDControler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DynaRobinMEX\resources.res" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynaRobinMEX\DynaRobinMex_x64.def" />
+    <None Include="DynaRobinMEX\DynaRobinMex_x86.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

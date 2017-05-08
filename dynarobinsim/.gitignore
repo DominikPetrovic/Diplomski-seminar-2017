@@ -1,0 +1,10 @@
+Debug
+
+Release
+
+OpenDynamicsEngine/lib
+
+/*.sdf
+
+OpenDynamicsEngine/build/vs2013/*.sdf
+/*.suo

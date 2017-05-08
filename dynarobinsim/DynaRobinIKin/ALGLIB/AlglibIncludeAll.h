@@ -1,0 +1,17 @@
+#include "ap.h"
+#include "alglibinternal.h"
+#include "alglibmisc.h"
+#include "dataanalysis.h"
+#include "diffequations.h"
+#include "fasttransforms.h"
+#include "integration.h"
+#include "interpolation.h"
+#include "alglibinternal.h"
+#include "linalg.h"
+#include "optimization.h"
+#include "solvers.h"
+#include "specialfunctions.h"
+#include "statistics.h"
+
+
+#include "AlglibCognitus.h"

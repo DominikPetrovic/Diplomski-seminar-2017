@@ -1,0 +1,2 @@
+LIBRARY	"DynaRobinIKin.mexw32"
+EXPORTS mexFunction 
