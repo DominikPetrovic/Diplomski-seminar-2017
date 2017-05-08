@@ -53,7 +53,7 @@ for(i=1:5)
 measurements=rand(6,1);
 [F Q P_m x_m delta_x_m]= prediction_step(x_state, delta_x, dt, measurements, P_p);
 
-encoders=rand(16,1);
+encoders=rand(1,16);
 [x_state, delta_x_p, P_p]= update_step(x_m, delta_x_m, dt, P_m, encoders);
 
 delta_x=delta_x_p;
