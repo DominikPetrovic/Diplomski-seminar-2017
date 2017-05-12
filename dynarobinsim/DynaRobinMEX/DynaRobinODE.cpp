@@ -17,8 +17,8 @@
 
 
 // Potrebno je korigirati u skladu s svojim
-#define PATH_TO_TEXTURES "C:/Users/Zvonimir/Desktop/Materijali/2.semestar/Diplomski_seminar/dynarobinsim/OpenDynamicsEngine/drawstuff/textures"
-
+#define PATH_TO_TEXTURES "C:/Users/Zvonimir/Desktop/Materijali/2.semestar/Diplomski-seminar-2017/dynarobinsim/OpenDynamicsEngine/drawstuff/textures"
+						
 #define NUM_OF_JOINTS 170
 #define NUM_OF_CONTACT_POINTS 60
 
