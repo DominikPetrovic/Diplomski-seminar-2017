@@ -77,13 +77,13 @@ P_p=(eye(27)-K*H)*P_m;
 delta_fi_p=delta_x(7:9);
 delta_q_p=quatmultiply(map_q(delta_fi_p)',q_m')';
 
-x(1:6,1)=x_m(1:6)+dt*delta_x(1:6);
-x(7:10,1)=x_m(7:10)+dt*delta_q_p;
-x(11:28,1)=x_m(11:28)+dt*delta_x(10:27);
+x_state(1:6,1)=x_m(1:6)+dt*delta_x(1:6);
+x_state(7:10,1)=delta_q_p;
+x_state(11:28,1)=x_m(11:28)+dt*delta_x(10:27);
 
 %% saving to matlab workspace
 
-assignin('base','x',x);
+assignin('base','x_state',x_state);
 assignin('base','delta_x',delta_x);
 assignin('base','P_p', P_p);
 

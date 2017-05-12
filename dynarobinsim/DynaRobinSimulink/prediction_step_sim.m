@@ -42,6 +42,12 @@ x_m=[r_m; v_m; q_m; p_m; bf_m; bw_m];
 %% set of linear differential equations describing the error dynamics
 ww=wgn(3,1,0); wbw=wgn(3,1,0); % ??????
 wf=wgn(3,1,0); wbf=wgn(3,1,0); % ??????
+
+%% potrebno promjeniti
+ww=zeros(3,1); wbw=zeros(3,1); 
+wf=zeros(3,1); wbf=zeros(3,1); 
+
+%%
 d_delta_r=delta_v_p;
 d_delta_v=-C_p'*skew_matrix(f_tilda)*delta_fi_p-C_p'*delta_bf_p-C_p'*wf;
 d_delta_fi=-skew_matrix(w_tilda)*delta_fi_p-delta_bw_p-ww;
@@ -51,7 +57,15 @@ Qp_2=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]; wp_2=mvnrnd([0 0 0],Qp_2)'; 
 Qp_3=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]; wp_3=mvnrnd([0 0 0],Qp_3)'; % ???
 Qp_4=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]; wp_4=mvnrnd([0 0 0],Qp_4)'; % ???
 
-d_delta_p1=C_p'*wp_1; d_delta_p2=C_p'*wp_2;  d_delta_p3=C_p'*wp_3; d_delta_p4=C_p'*wp_4;
+%% potrebno promijeniti
+wp_1=[0 0 0]';
+wp_2=[0 0 0]';
+wp_3=[0 0 0]';
+wp_4=[0 0 0]';
+
+%%
+d_delta_p1=C_p'*wp_1;
+d_delta_p2=C_p'*wp_2;  d_delta_p3=C_p'*wp_3; d_delta_p4=C_p'*wp_4;
 d_delta_p=[d_delta_p1; d_delta_p2; d_delta_p3; d_delta_p4];
 d_delta_bf=wbf;
 d_delta_bw=wbw;
