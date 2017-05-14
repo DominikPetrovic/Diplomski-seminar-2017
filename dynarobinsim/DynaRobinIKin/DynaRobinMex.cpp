@@ -180,6 +180,8 @@ static void mdlOutputs(SimStruct *S, int_T tid)
 	BR_joints[2] = Kinematics->BR_last_res->at(2);
 
 
+
+
 	Kinematics->CalculateDirectKinematics(FL_joints, &FL_pos);
 	Kinematics->CalculateDirectKinematics(FR_joints, &FR_pos);
 	Kinematics->CalculateDirectKinematics(BL_joints, &BL_pos);

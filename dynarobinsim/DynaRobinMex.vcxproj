@@ -118,7 +118,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>Kicma;dDOUBLE;WIN32;_DEBUG;_WINDOWS;_USRDLL;MATLAB_MEX_FILE;DYNAROBINMEX_EXPORTS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\OpenDynamicsEngine\include;$(MATLAB)\simulink\include;$(MATLAB)\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Zvonimir\Desktop\Materijali\2.semestar\Diplomski-seminar-2017\dynarobinsim\DynaRobinIKin;$(SolutionDir)\OpenDynamicsEngine\include;$(MATLAB)\simulink\include;$(MATLAB)\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
       <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>

@@ -17,6 +17,7 @@
 #define CHAR16_T
 #include <simstruc.h>
 #include "DynRobinBody.h"
+#include "DynaRobinMex.h"
 #include "DynRobinSpringLeg.h"
 #include "DynaRobinODE.h"
 #include <Windows.h>

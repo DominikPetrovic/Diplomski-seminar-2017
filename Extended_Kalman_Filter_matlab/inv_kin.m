@@ -17,6 +17,7 @@ else if (strcmp(foot ,'FR') || strcmp(foot ,'BL'))
 end
 
 x=w(1); y=w(2); z=w(3);
+q4=29.04*pi/180;
 
 %helper variable for calculating q1
 fi=atan2(x/sqrt(x^2+y^2),-y/sqrt(x^2+y^2));
@@ -53,10 +54,11 @@ q222=atan2(q2sin22,q2cos22);
 
 q2=[q211; q212; q221; q222];
 
-q=[q11 q211 q311 q4;
-   q11 q212 q312 q4;
-   q12 q221 q321 q4;
-   q12 q222 q322 q4];
+
+q=[q11 q211 q311 ;
+   q11 q212 q312 ;
+   q12 q221 q321 ;
+   q12 q222 q322 ];
 
 
 end

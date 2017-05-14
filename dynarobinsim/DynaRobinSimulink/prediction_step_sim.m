@@ -1,4 +1,4 @@
-function prediction_step(x, delta_x, dt, f_IMU, w_IMU, P_p)
+function prediction_step(x, delta_x, dt, f_IMU, w_IMU, P_p, footZ)
 
 %suffix p stands for plus
 %suffix m stands for minus, ( minus is a priori state estimation in step
@@ -27,6 +27,12 @@ C_p=quat2rotm(q_p'); %rotation matrix
 f_hat=f_tilda-bf_p; % bias corrected IMU measurements
 w_hat=w_tilda-bw_p; % bias corrected IMU measurements
 g=[0 0 0]';
+
+ground_contactFR=1;
+ground_contactFL=1;
+ground_contactBR=1;
+ground_contactBL=1;
+
 %% a priori state estimate equations 
 r_m=r_p+dt*v_p+dt^2/2*(C_p'*f_hat+g);
 v_m=v_p+dt*(C_p'*f_hat+g);
@@ -40,28 +46,57 @@ p_m=[p1_m; p2_m; p3_m; p4_m];
 x_m=[r_m; v_m; q_m; p_m; bf_m; bw_m];
 
 %% set of linear differential equations describing the error dynamics
-ww=wgn(3,1,0); wbw=wgn(3,1,0); % ??????
-wf=wgn(3,1,0); wbf=wgn(3,1,0); % ??????
+ww=wgn(3,1,0)*0.1; wbw=wgn(3,1,0)*0.1; % ??????
+wf=wgn(3,1,0)*0.1; wbf=wgn(3,1,0)*0.1; % ??????
 
 %% potrebno promjeniti
-ww=zeros(3,1); wbw=zeros(3,1); 
-wf=zeros(3,1); wbf=zeros(3,1); 
+%ww=zeros(3,1); wbw=zeros(3,1); 
+%wf=zeros(3,1); wbf=zeros(3,1); 
 
 %%
+if(footZ(1)>-0.254)
+    ground_contactFL=0;
+    wp_1=[9999;9999;9999];
+    wp_1=[0;0;0];
+else
+Qp_1=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]*0.1; wp_1=mvnrnd([0 0 0],Qp_1)'; % ??? 
+end
+if(footZ(1)>-0.254)
+    ground_contactFR=0;
+    wp_2=[9999;9999;9999];
+    wp_2=[0;0;0];
+else
+Qp_2=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]*0.1; wp_2=mvnrnd([0 0 0],Qp_2)'; % ??? 
+end
+if(footZ(1)>-0.254)
+    ground_contactBL=0;
+    wp_3=[9999;9999;9999];
+    wp_3=[0;0;0];
+else
+Qp_3=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]*0.1; wp_3=mvnrnd([0 0 0],Qp_3)'; % ??? 
+end    
+if(footZ(1)>-0.254)
+    ground_contactBR=0;
+    wp_4=[9999;9999;9999];
+    wp_4=[0;0;0];
+else
+Qp_4=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]*0.1; wp_4=mvnrnd([0 0 0],Qp_4)'; % ??? 
+end
+
+Qp_1=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]*0.1; wp_1=mvnrnd([0 0 0],Qp_1)'; % ??? 
+Qp_2=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]*0.1; wp_2=mvnrnd([0 0 0],Qp_2)'; % ??? 
+Qp_3=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]*0.1; wp_3=mvnrnd([0 0 0],Qp_3)'; % ??? 
+Qp_4=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]*0.1; wp_4=mvnrnd([0 0 0],Qp_4)'; % ??? 
+
 d_delta_r=delta_v_p;
 d_delta_v=-C_p'*skew_matrix(f_tilda)*delta_fi_p-C_p'*delta_bf_p-C_p'*wf;
 d_delta_fi=-skew_matrix(w_tilda)*delta_fi_p-delta_bw_p-ww;
 
-Qp_1=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]; wp_1=mvnrnd([0 0 0],Qp_1)'; % ??? 
-Qp_2=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]; wp_2=mvnrnd([0 0 0],Qp_2)'; % ???
-Qp_3=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]; wp_3=mvnrnd([0 0 0],Qp_3)'; % ???
-Qp_4=[rand(1,1) 0 0; 0 rand(1,1) 0; 0 0 rand(1,1)]; wp_4=mvnrnd([0 0 0],Qp_4)'; % ???
-
 %% potrebno promijeniti
-wp_1=[0 0 0]';
-wp_2=[0 0 0]';
-wp_3=[0 0 0]';
-wp_4=[0 0 0]';
+%wp_1=[0 0 0]';
+%wp_2=[0 0 0]';
+%wp_3=[0 0 0]';
+%wp_4=[0 0 0]';
 
 %%
 d_delta_p1=C_p'*wp_1;
@@ -127,11 +162,11 @@ F(25:27,25:27)=ones(3);
 %% discrete process noise covariance matrix Qk
 
 %covariance parameters
-Qf=rand(3,3);
-Qbf=rand(3,3);
-Qw=rand(3,3);
-Qbw=rand(3,3);
-Qp=rand(3,3);
+Qf=rand(3,3)*0.1;
+Qbf=rand(3,3)*0.1;
+Qw=rand(3,3)*0.1;
+Qbw=rand(3,3)*0.1;
+Qp=rand(3,3)*0.1;
 
 Q=zeros(27);
 

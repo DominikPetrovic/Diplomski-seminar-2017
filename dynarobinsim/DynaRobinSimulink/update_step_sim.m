@@ -39,27 +39,27 @@ H=[-C_m zeros(3) skew_matrix(C_m*(p1_m-r_m))  C_m zeros(3) zeros(3) zeros(3) zer
    -C_m zeros(3) skew_matrix(C_m*(p4_m-r_m))  zeros(3) zeros(3) zeros(3) C_m zeros(3) zeros(3)];
 
 %%
-Ra=ones(4); Rs=ones(3); q01=rand(1,4); %poslije promjeniti
-q01=encoders(1:4)';
-Rlkin1=jacobian_dir_kin(q01,'FR');        
+Ra=rand(4)*0.1; Rs=rand(3)*0.1; 
+q01=encoders(1:3)';
+Rlkin1=jacobian_dir_kin(q01,'FL');        
 %covariance matrix for ni
 R1=double(Rs+Rlkin1*Ra*Rlkin1'); 
 
-Ra=ones(4); Rs=ones(3); q02=rand(1,4); %poslije promjeniti
-q02=encoders(5:8)';
-Rlkin2=jacobian_dir_kin(q02,'FL');        
+Ra=rand(4)*0.1; Rs=rand(3)*0.1; 
+q02=encoders(4:6)';
+Rlkin2=jacobian_dir_kin(q02,'FR');        
 %covariance matrix for ni
 R2=double(Rs+Rlkin2*Ra*Rlkin2');
 
-Ra=ones(4); Rs=ones(3); q03=rand(1,4); %poslije promjeniti
-q03=encoders(9:12)';
-Rlkin3=jacobian_dir_kin(q03,'BR');        
+Ra=rand(4)*0.1; Rs=rand(3)*0.1; 
+q03=encoders(7:9)';
+Rlkin3=jacobian_dir_kin(q03,'BL');        
 %covariance matrix for ni
 R3=double(Rs+Rlkin3*Ra*Rlkin3');
 
-Ra=ones(4); Rs=ones(3); q04=rand(1,4); %poslije promjeniti
-q04=encoders(13:16)';
-Rlkin4=jacobian_dir_kin(q04,'BL');        
+Ra=rand(4)*0.1; Rs=rand(3)*0.1; 
+q04=encoders(10:12)';
+Rlkin4=jacobian_dir_kin(q04,'BR');        
 %covariance matrix for ni
 R4=double(Rs+Rlkin4*Ra*Rlkin4');
 

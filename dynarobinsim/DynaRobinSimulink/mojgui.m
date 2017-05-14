@@ -105,7 +105,7 @@ function sliderduljine_Callback(hObject, eventdata, handles)
 duljina=get(hObject,'Value');
 skretanje=0;
 
-smjer=evalin('base','smjer')
+smjer=evalin('base','smjer');
 
 % if(get(handles.naprijed,'Value')==1)
 %     smjer=1
@@ -153,10 +153,10 @@ function brzina_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'Value') returns position of slider
 %        get(hObject,'Min') and get(hObject,'Max') to determine range of slider
 
-    trajanje=3.5-(get(hObject,'Value'))
+    trajanje=3.5-(get(hObject,'Value'));
   
     assignin('base', 'trajanje', trajanje);
-    vectort=[0 linspace(0.25*trajanje,0.75*trajanje,5) trajanje]
+    vectort=[0 linspace(0.25*trajanje,0.75*trajanje,5) trajanje];
     assignin('base', 'vectort', vectort);
     
 set(findobj('Tag','trajanjekoraka'),'String',num2str(trajanje));

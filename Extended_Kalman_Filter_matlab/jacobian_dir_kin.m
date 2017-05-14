@@ -18,6 +18,7 @@ end
 
 syms q1 q2 q3 q4
 
+
 T(1,1)=cos(q1)*cos(q2+q3+q4);
 T(1,2)=-cos(q1)*sin(q2+q3+q4);
 T(1,3)=sin(q1);
@@ -41,6 +42,8 @@ T(4,4)=1;
                                                             % PROVJERITI ????
 Jac=jacobian(T(1:3,4),[q1 q3 q3 q4]); 
 
-Jac=vpa(subs(Jac,[q1 q2 q3 q4],q0));
+q44=29.03*pi/180;
+
+Jac=vpa(subs(Jac,[q1 q2 q3 q4], [q0 q44]));
 
 end
