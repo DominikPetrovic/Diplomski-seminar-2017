@@ -46,7 +46,6 @@ q2cos12=((x-d2*sin(q11)/cos(q11))+(l*sin(q312+ksi))*z/(a2+l*cos(q312+ksi)))/(a2+
 q2cos21=((x-d2*sin(q12)/cos(q12))+(l*sin(q321+ksi))*z/(a2+l*cos(q321+ksi)))/(a2+l*cos(q321+ksi)+(l*sin(q321+ksi))^2/(a2+l*cos(q321+ksi)));
 q2cos22=((x-d2*sin(q12)/cos(q12))+(l*sin(q322+ksi))*z/(a2+l*cos(q322+ksi)))/(a2+l*cos(q322+ksi)+(l*sin(q322+ksi))^2/(a2+l*cos(q322+ksi)));
 
-
 q211=atan2(q2sin11,q2cos11);
 q212=atan2(q2sin12,q2cos12);
 q221=atan2(q2sin21,q2cos21);
