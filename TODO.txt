@@ -1,0 +1,4 @@
+negdje smeta ili fali dt pa zato odskace nakon duzeg vremena, a ne broja koraka
+
+mali delta_x(7:9), mala promjena rotacije izrazene u kutu uzrokuje veliku
+(barem na oko) rotaciju izrazenu u kvaternionu #DONE

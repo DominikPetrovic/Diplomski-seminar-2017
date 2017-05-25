@@ -17,7 +17,6 @@
 #define CHAR16_T
 #include <simstruc.h>
 #include "DynRobinBody.h"
-#include "DynaRobinMex.h"
 #include "DynRobinSpringLeg.h"
 #include "DynaRobinODE.h"
 #include <Windows.h>
@@ -60,7 +59,7 @@ static void mdlInitializeSizes(SimStruct *S)
 
 #ifndef DIRECT
 											   /* set the number of output ports and their widths */
-	if (!ssSetNumOutputPorts(S, 18)) return;
+	if (!ssSetNumOutputPorts(S, 21)) return;
 
 	ssSetOutputPortWidth(S, 0, 3); //BodyPositionGlobal 
 	ssSetOutputPortWidth(S, 1, 3); //BodyRollPitchYaw   
@@ -80,6 +79,9 @@ static void mdlInitializeSizes(SimStruct *S)
 	ssSetOutputPortWidth(S, 15, 3); //BRForce
 	ssSetOutputPortWidth(S, 16, 3); //AngularVelocityLocal
 	ssSetOutputPortWidth(S, 17, 3); //LinearVelovictyLocal
+	ssSetOutputPortWidth(S, 18, 4); //FootPosXGlobal 
+	ssSetOutputPortWidth(S, 19, 4); //FootPosYGlobal 
+	ssSetOutputPortWidth(S, 20, 4); //FootPosZGlobal
 #else
 	if (!ssSetNumOutputPorts(S, 30)) return;
 
@@ -241,6 +243,9 @@ static void mdlOutputs(SimStruct *S, int_T tid)
 	real_T* BRForce = ssGetOutputPortRealSignal(S, 15);
 	real_T* AngVelLoc = ssGetOutputPortRealSignal(S, 16);
 	real_T* LinVelLoc = ssGetOutputPortRealSignal(S, 17);
+	real_T* FootPosXGlobal = ssGetOutputPortRealSignal(S, 18);
+	real_T* FootPosYGlobal = ssGetOutputPortRealSignal(S, 19);
+	real_T* FootPosZGlobal = ssGetOutputPortRealSignal(S, 20);
 
 	Dynarobin->GetRobotState();
 	memcpy(BodyPositionGlobal, RobotBody.BodyPosition, 3 * sizeof(dReal));
@@ -270,15 +275,15 @@ static void mdlOutputs(SimStruct *S, int_T tid)
 		FootPosZLocal[i] = Dynarobin->FootPosLocal[i][2];
 		/*KneePosXGlobal[i]=RobotLegs[i].KneePosGlobal[0];
 		KneePosYGlobal[i]=RobotLegs[i].KneePosGlobal[1];
-		KneePosZGlobal[i]=RobotLegs[i].KneePosGlobal[2];
-		FootPosXGlobal[i]=RobotLegs[i].FootPosGlobal[0];
-		FootPosYGlobal[i]=RobotLegs[i].FootPosGlobal[1];
-		FootPosZGlobal[i]=RobotLegs[i].FootPosGlobal[2];
-		LegPosXGlobal[i] =RobotLegs[i].LegPosGlobal[0];
-		LegPosYGlobal[i] =RobotLegs[i].LegPosGlobal[1];
-		LegPosZGlobal[i] =RobotLegs[i].LegPosGlobal[2];
-		LegEnergy[i]     =RobotLegs[i].LegEnergy;
-		SpringLength[i]  =RobotLegs[i].SpringLenght; */
+		KneePosZGlobal[i]=RobotLegs[i].KneePosGlobal[2];*/
+		FootPosXGlobal[i] = RobotLegs[i].FootPosGlobal[0];
+		FootPosYGlobal[i] = RobotLegs[i].FootPosGlobal[1];
+		FootPosZGlobal[i] = RobotLegs[i].FootPosGlobal[2];/*
+														  LegPosXGlobal[i] =RobotLegs[i].LegPosGlobal[0];
+														  LegPosYGlobal[i] =RobotLegs[i].LegPosGlobal[1];
+														  LegPosZGlobal[i] =RobotLegs[i].LegPosGlobal[2];
+														  LegEnergy[i]     =RobotLegs[i].LegEnergy;
+														  SpringLength[i]  =RobotLegs[i].SpringLenght; */
 
 	}
 	//SpineEnergy[0]     = RobotBody.BodyEnergy; 

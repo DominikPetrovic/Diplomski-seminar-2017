@@ -1,6 +1,8 @@
 function Jac=jacobian_dir_kin2(q0)
 
-syms q1 q2 q3 q4
+syms q1 q2 q3 %q4
+
+q4=29.03*pi/180;
 
 l1=0.18;
 l2=0.09;
@@ -22,10 +24,10 @@ z = dz - Proj_z;
   
 w=[x;y;z];
 
-Jac=jacobian(w,[q1 q3 q3 q4]); 
+Jac=jacobian(w,[q1 q3 q3 ]); 
 
 q44=29.03*pi/180;
 
-Jac=vpa(subs(Jac,[q1 q2 q3 q4], [q0 q44]));
+Jac=vpa(subs(Jac,[q1 q2 q3 ], [q0]));
 
 end
